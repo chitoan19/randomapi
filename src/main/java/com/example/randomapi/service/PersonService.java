@@ -14,6 +14,7 @@ public class PersonService {
         result.add(new Person("Toan", "Bac Ninh", 24, new Date("09/12/1999")));
         result.add(new Person("Toan1", "Bac Ninh", 25, new Date("09/12/1999")));
         result.add(new Person("Toan2", "Bac Ninh", 26, new Date("09/12/1999")));
+        result.add(new Person("Toan3", "Bac Ninh", 27, new Date("09/12/1999")));
         return result;
     }
 }
