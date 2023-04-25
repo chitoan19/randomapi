@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/chitoan19/randomapi.git'
+                git branch: 'main', url: 'https://github.com/chitoan19/randomapi.git'
             }
         }
     }
