@@ -7,21 +7,18 @@ import org.redisson.config.Config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication
+@EnableAspectJAutoProxy
 public class RandomapiApplication {
-	@Value("${spring.redis.host}")
-	String redisHost;
 
 	public static void main(String[] args) {
-		Config config = new Config();
-		config.useSingleServer().setAddress("redis://" + "localhost:6379");
-		RedissonClient redissonClient = Redisson.create(config);
-		redissonClient.getBucket("test").set("hello");
-		redissonClient.getBucket("test").get();
-		System.err.println("=======> GET VALUE: " + redissonClient.getBucket("test").get());
 		SpringApplication.run(RandomapiApplication.class, args);
 	}
 
